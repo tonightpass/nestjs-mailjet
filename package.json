@@ -9,7 +9,7 @@
     "clean": "rimraf dist",
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "prepare": "husky install && pnpm install && pnpm build",
+    "prepare": "husky install && pnpm build",
     "version": "changeset version",
     "release": "changeset publish",
     "lint": "eslint . --ext .ts",
