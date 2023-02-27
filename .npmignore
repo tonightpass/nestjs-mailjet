@@ -1,0 +1,13 @@
+.circleci/
+node_modules/
+
+# source
+#index.ts
+package-lock.json
+tslint.json
+tsconfig.json
+.prettierrc
+.DS_Store
+
+# config
+.env
