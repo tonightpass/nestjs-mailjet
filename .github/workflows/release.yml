@@ -7,7 +7,7 @@ on:
 
 jobs:
   release:
-    if: github.repository == 'tonightpass/tonightpass'
+    if: github.repository == 'tonightpass/kitchen'
 
     runs-on: ubuntu-latest
 
