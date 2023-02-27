@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "prebuild": "rimraf dist",
-    "build": "nest build",
+    "build": "pnpm nest build",
     "prepare": "husky install && pnpm run build",
     "version": "changeset version",
     "release": "changeset publish",
