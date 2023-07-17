@@ -1,7 +1,7 @@
 import { HttpModule } from "@nestjs/axios";
 import { DynamicModule, Module, Provider } from "@nestjs/common";
 
-import { MAILJET_MODULE_OPTIONS } from "./constants/mailjet.constants";
+import { MAILJET_MODULE_OPTIONS } from "../constants/mailjet.constants";
 import { MailjetModuleOptions } from "./interfaces";
 import {
   MailjetModuleAsyncOptions,

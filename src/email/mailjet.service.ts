@@ -1,7 +1,7 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { Client, Contact, LibraryResponse, SendEmailV3_1 } from "node-mailjet";
 
-import { MAILJET_MODULE_OPTIONS } from "./constants/mailjet.constants";
+import { MAILJET_MODULE_OPTIONS } from "../constants/mailjet.constants";
 import { MailjetModuleOptions } from "./interfaces";
 
 @Injectable()
@@ -36,7 +36,7 @@ export class MailjetService {
         .id(id.toString())
         .request({}, queryData);
 
-    if (result.response.status !== 201 || result.body.Count === 0) {
+    if (result.response.status !== 200 || result.body.Count === 0) {
       throw new Error(`Contact with id ${id} not found`);
     }
 
@@ -62,10 +62,14 @@ export class MailjetService {
       await this.client
         .post("contact", { version: "v3" })
         .id(contactId.toString())
-        .action("managecontactlist")
+        .action("managecontactslists")
         .request({
-          Action: "addforce",
-          ListID: listId,
+          ContactsLists: [
+            {
+              Action: "addforce",
+              ListID: listId,
+            },
+          ],
         });
 
     if (result.response.status !== 201 || result.body.Count === 0) {
@@ -83,10 +87,14 @@ export class MailjetService {
       await this.client
         .post("contact", { version: "v3" })
         .id(contactId.toString())
-        .action("managecontactlist")
+        .action("managecontactslists")
         .request({
-          Action: "unsub",
-          ListID: listId,
+          ContactsLists: [
+            {
+              Action: "unsub",
+              ListID: listId,
+            },
+          ],
         });
 
     if (result.response.status !== 201 || result.body.Count === 0) {
