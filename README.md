@@ -1,70 +1,81 @@
-<p align="center">
-  <a href="https://tonightpass.com">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://tonightpass.com/static/images/logo/tonightpass.svg">
-        <img src="https://tonightpass.com/static/images/logo/tonightpass.svg" width="128">
-      </picture>
-    <h1 align="center">
-      NestJS-Mailjet
-    </h1>
-  </a>
-</p>
+# Turborepo starter
 
-<p align="center">
-  <a aria-label="onRuntime Studio" href="https://onruntime.com" target="_blank">
-    <img src="https://img.shields.io/badge/MADE%20BY%20ONRUNTIME-fff.svg?style=for-the-badge&labelColor=000">
-  </a>
-  <a aria-label="NPM version" href="https://www.npmjs.com/package/@tonightpass/nestjs-mailjet" target="_blank">
-    <img alt="" src="https://img.shields.io/npm/v/@tonightpass/nestjs-mailjet.svg?style=for-the-badge&labelColor=000000">
-  </a>
-  <a aria-label="License" href="https://github.com/tonightpass/nestjs-mailjet/blob/master/LICENSE" target="_blank">
-    <img alt="" src="https://img.shields.io/npm/l/next.svg?style=for-the-badge&labelColor=000000">
-  </a>
-</p>
+This is an official starter Turborepo.
 
-<p>
-  <h2>
-    Social
-  </h2>
+## Using this example
 
-  <a aria-label="Discord" href="https://www.discord.gg/VvvAkPqQ98" target="_blank">
-    <img alt="" src="https://img.shields.io/discord/829290979092856833?label=Discord&style=for-the-badge&labelColor=000000&logo=discord&logoColor=white&logoWidth=20">
-  </a>
-  <a aria-label="LinkedIn" href="https://www.linkedin.com/company/tonightpass" target="_blank">
-    <img alt="" src="https://img.shields.io/badge/LinkedIn-0e76a8.svg?style=for-the-badge&labelColor=000000&logo=linkedin&logoColor=white&logoWidth=20">
-  </a>
-  <a aria-label="Instagram" href="https://www.instagram.com/tonightpass" target="_blank">
-    <img alt="" src="https://img.shields.io/badge/Instagram-C13584.svg?style=for-the-badge&labelColor=000000&logo=instagram&logoColor=white&logoWidth=20">
-  </a>
-</p>
+Run the following command:
 
-## Description
+```sh
+npx create-turbo@latest
+```
 
-[Mailjet](http://www.mailjet.com/) Module for Nest.js Framework
+## What's inside?
 
-See [Mailjet Documentation](http://dev.mailjet.com/guides/?javascript#) for all details.
-This module use [Mailjet NodeJs Wrapper](https://github.com/mailjet/mailjet-apiv3-nodejs).
+This Turborepo includes the following packages/apps:
 
-## Getting Started
+### Apps and Packages
 
-Visit <a aria-label="tonightpass nestjs-mailjet" href="https://tonightpass.com/nestjs-mailjet" target="_blank">/nestjs-mailjet</a> to get started with NestJS Mailer and see the full documentation.
+- `docs`: a [Next.js](https://nextjs.org/) app
+- `web`: another [Next.js](https://nextjs.org/) app
+- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
-## Community
+Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-The TonightPass community can be found on [GitHub Discussions](https://github.com/tonightpass/discussions), where you can ask questions, voice ideas, and share your projects.
+### Utilities
 
-To chat with other community members and see the live development you can join the [Discord](https://discord.gg/VvvAkPqQ98).
+This Turborepo has some additional tools already setup for you:
 
-Our [Code of Conduct](https://docs.onruntime.com/contributing/code-of-conduct) applies to all community channels.
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io) for code formatting
 
-## Contributing
+### Build
 
-Please see our [contributing rules](https://docs.onruntime.com/contributing/introduction).
+To build all apps and packages, run the following command:
 
-## Authors
+```
+cd my-turborepo
+pnpm build
+```
 
-- Jérémy Baudrin ([@jerembdn](https://github.com/jerembdn))
+### Develop
 
-## License
+To develop all apps and packages, run the following command:
 
-Mailjet Module for Nest.js is [MIT licensed](LICENSE).
+```
+cd my-turborepo
+pnpm dev
+```
+
+### Remote Caching
+
+Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+
+By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+
+```
+cd my-turborepo
+npx turbo login
+```
+
+This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+
+Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+
+```
+npx turbo link
+```
+
+## Useful Links
+
+Learn more about the power of Turborepo:
+
+- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
+- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
+- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
+- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
+- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
+- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)

@@ -1,7 +1,7 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { MAILJET_SMS_MODULE_OPTIONS } from "../constants/mailjet.constants";
 import { MailjetSMSModuleOptions } from "./interfaces";
-import * as SinchClient from "sinch-rtc";
+import { default as SinchClient } from "sinch-rtc";
 
 @Injectable()
 export class MailjetSMSService {
@@ -9,7 +9,7 @@ export class MailjetSMSService {
 
   constructor(
     @Inject(MAILJET_SMS_MODULE_OPTIONS)
-    options: MailjetSMSModuleOptions
+    options: MailjetSMSModuleOptions,
   ) {
     this.client = new SinchClient({
       applicationKey: options.applicationKey,

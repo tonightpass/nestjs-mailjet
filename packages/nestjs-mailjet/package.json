@@ -1,0 +1,64 @@
+{
+  "name": "@tonightpass/nestjs-mailjet",
+  "version": "3.0.4",
+  "description": "Mailjet module for NestJS Framework",
+  "main": "./dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "rimraf dist",
+    "build": "tsup src/index.ts --format cjs --dts",
+    "dev": "pnpm build -- --watch"
+  },
+  "peerDependencies": {
+    "@nestjs/axios": ">=1.x.x",
+    "@nestjs/common": ">=8.x.x",
+    "@nestjs/core": ">=8.x.x",
+    "@nestjs/platform-express": ">=8.x.x",
+    "@tonightpass/shared-types": ">=0.x.x",
+    "sinch-rtc": ">= 1.x.x"
+  },
+  "peerDependenciesMeta": {
+    "@sinch-rtc": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "node-mailjet": "6.0.2"
+  },
+  "devDependencies": {
+    "@nestjs/axios": "^3.0.0",
+    "@nestjs/common": "^10.0.4",
+    "@nestjs/core": "^10.0.4",
+    "@nestjs/platform-express": "10.0.4",
+    "@tonightpass/shared-types": "^0.5.10",
+    "axios": "^1.4.0",
+    "rimraf": "3.0.2",
+    "rxjs": "^7.8.1",
+    "sinch-rtc": "^1.4.12",
+    "tsup": "^7.1.0",
+    "typescript": "4.4.3"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.js",
+      "limit": "5 kB"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/tonightpass/nestjs-mailjet/issues"
+  },
+  "homepage": "https://github.com/tonightpass/nestjs-mailjet#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonightpass/nestjs-mailjet.git"
+  },
+  "keywords": [
+    "Mailjet",
+    "NestJS",
+    "Typescript"
+  ]
+}
