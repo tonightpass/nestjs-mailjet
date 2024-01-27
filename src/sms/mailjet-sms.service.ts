@@ -22,12 +22,14 @@ export class MailjetSMSService {
   async sendVerificationCode(phoneNumber: string): Promise<void> {
     const ongoingVerification = this.client.createSmsVerification(phoneNumber);
 
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     ongoingVerification.initiate().then(() => {});
   }
 
   async verifyCode(phoneNumber: string, code: string): Promise<void> {
     const ongoingVerification = this.client.createSmsVerification(phoneNumber);
 
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     ongoingVerification.verify(code).then(() => {});
   }
 }
