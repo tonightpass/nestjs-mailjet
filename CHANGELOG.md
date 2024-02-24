@@ -1,5 +1,11 @@
 # @tonightpass/nestjs-mailjet
 
+## 4.0.1
+
+### Patch Changes
+
+- Fix version from requests
+
 ## 4.0.0
 
 ### Major Changes
