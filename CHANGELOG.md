@@ -1,5 +1,11 @@
 # @tonightpass/nestjs-mailjet
 
+## 4.0.3
+
+### Patch Changes
+
+- Fix dependencies peer meta
+
 ## 4.0.2
 
 ### Patch Changes
