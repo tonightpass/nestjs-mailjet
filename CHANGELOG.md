@@ -1,5 +1,11 @@
 # @tonightpass/nestjs-mailjet
 
+## 4.0.4
+
+### Patch Changes
+
+- Remove import of sms module
+
 ## 4.0.3
 
 ### Patch Changes
