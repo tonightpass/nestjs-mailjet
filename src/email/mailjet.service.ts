@@ -31,10 +31,7 @@ export class MailjetService {
     };
 
     const result: LibraryResponse<Contact.GetContactResponse> =
-      await this.client
-        .get("contact", { version: "v3" })
-        .id(id.toString())
-        .request({}, queryData);
+      await this.client.get("contact").id(id.toString()).request({}, queryData);
 
     if (result.response.status !== 200 || result.body.Count === 0) {
       throw new Error(`Contact with id ${id} not found`);
@@ -45,7 +42,7 @@ export class MailjetService {
 
   async addContact(contact: Contact.PostContactBody): Promise<Contact.Contact> {
     const result: LibraryResponse<Contact.PostContactResponse> =
-      await this.client.post("contact", { version: "v3" }).request(contact);
+      await this.client.post("contact").request(contact);
 
     if (result.response.status !== 201 || result.body.Count === 0) {
       throw new Error("Contact not created");
@@ -56,17 +53,18 @@ export class MailjetService {
 
   async subscribeContactToList(
     contactId: string | number,
-    listId: string | number
+    listId: string | number,
+    action: "addforce" | "addnoforce" = "addnoforce"
   ): Promise<Contact.Contact> {
     const result: LibraryResponse<Contact.PostContactResponse> =
       await this.client
-        .post("contact", { version: "v3" })
+        .post("contact")
         .id(contactId.toString())
         .action("managecontactslists")
         .request({
           ContactsLists: [
             {
-              Action: "addforce",
+              Action: action,
               ListID: listId,
             },
           ],
@@ -85,7 +83,7 @@ export class MailjetService {
   ): Promise<Contact.Contact> {
     const result: LibraryResponse<Contact.PostContactResponse> =
       await this.client
-        .post("contact", { version: "v3" })
+        .post("contact")
         .id(contactId.toString())
         .action("managecontactslists")
         .request({
