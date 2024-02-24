@@ -1,5 +1,11 @@
 # @tonightpass/nestjs-mailjet
 
+## 4.0.2
+
+### Patch Changes
+
+- Publish
+
 ## 4.0.1
 
 ### Patch Changes
